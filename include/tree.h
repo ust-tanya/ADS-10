@@ -1,3 +1,25 @@
+// Copyright 2022 NNTU-CS
+#ifndef INCLUDE_TREE_H_
+#define INCLUDE_TREE_H_
+
+#include <vector>
+#include <string>
+
+class Tree {
+ public:
+    explicit Tree(std::vector<char> x) {
+        rt = new Node;
+        rt->val = '/';
+        BuildT(rt, x);
+        PermNumb(rt);
+    }
+    std::string operator[](int i) const {
+        if (i >= prm.size()) {
+            return "";
+        }
+    return prm[i];
+    }
+
     std::vector<char> getPrm(const Tree& tree, int n) {
         std::string res = tree[n-1];
         std::vector<char> prm;
